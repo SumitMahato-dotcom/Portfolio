@@ -111,7 +111,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 300;
+		font-weight: 600;
 		color: #666;
 		line-height: 1.5em;
 	}
@@ -2248,7 +2248,8 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #81918E;
-				background-image: url("../../images/banner.jpg");
+				background-image: url("../../images/Home Banner.jpg");
+			
 			}
 
 			#main > section.two {
