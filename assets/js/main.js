@@ -1,8 +1,72 @@
-// /*
-// 	Prologue by HTML5 UP
-// 	html5up.net | @ajlkn
-// 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-// */
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("#nav ul li a");
+    const footerButton = document.querySelector("footer a[href='#portfolio']");
+    const introLink = document.querySelector("#nav ul li a[href='#top']"); // Select the Intro link
+
+    // Function to activate a specific link
+    function activateLink(targetLink) {
+        // Remove 'active' class from all nav links
+        navLinks.forEach(nav => nav.classList.remove("active"));
+
+        // Add 'active' class to the target link
+        if (targetLink) {
+            targetLink.classList.add("active");
+        }
+    }
+
+    // Set "Intro" as active on page load
+    if (introLink) {
+        activateLink(introLink);
+    }
+
+    // Event listener for the footer "Know More" button
+    if (footerButton) {
+        footerButton.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            const portfolioNavLink = document.querySelector("#nav ul li a[href='#portfolio']");
+            activateLink(portfolioNavLink); // Highlight Portfolio link
+
+            // Smooth scroll to the Portfolio section
+            document.querySelector("#portfolio").scrollIntoView({ behavior: "smooth" });
+        });
+    }
+
+    // Event listener for nav links to handle normal navigation highlighting
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            activateLink(this); // Highlight the clicked link
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // (function($) {
 
@@ -122,43 +186,3 @@
 
 // })(jQuery);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll("#nav ul li a");
-    const footerButton = document.querySelector("footer a[href='#portfolio']");
-    const introLink = document.querySelector("#nav ul li a[href='#top']"); // Select the Intro link
-
-    // Function to activate a specific link
-    function activateLink(targetLink) {
-        // Remove 'active' class from all nav links
-        navLinks.forEach(nav => nav.classList.remove("active"));
-
-        // Add 'active' class to the target link
-        if (targetLink) {
-            targetLink.classList.add("active");
-        }
-    }
-
-    // Set "Intro" as active on page load
-    if (introLink) {
-        activateLink(introLink);
-    }
-
-    // Event listener for the footer "Know More" button
-    if (footerButton) {
-        footerButton.addEventListener("click", function (e) {
-            e.preventDefault(); // Prevent default anchor behavior
-            const portfolioNavLink = document.querySelector("#nav ul li a[href='#portfolio']");
-            activateLink(portfolioNavLink); // Highlight Portfolio link
-
-            // Smooth scroll to the Portfolio section
-            document.querySelector("#portfolio").scrollIntoView({ behavior: "smooth" });
-        });
-    }
-
-    // Event listener for nav links to handle normal navigation highlighting
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            activateLink(this); // Highlight the clicked link
-        });
-    });
-});
