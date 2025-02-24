@@ -1765,9 +1765,9 @@ input, select, textarea {
 		}
 
 		.image.featured {
-			display: block;
+			/* display: block;
 			width: 100%;
-			margin: 0 0 2em 0;
+			margin: 0 0 2em 0; */
 		}
 
 		.image.left {
@@ -2629,5 +2629,5 @@ input, select, textarea {
 					border-radius: 5px;
 					padding: 5px 10px;
 					transition: 0.3s ease-in-out;
-				}
+				}	
 	}
